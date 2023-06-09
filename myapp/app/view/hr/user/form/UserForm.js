@@ -13,7 +13,8 @@ Ext.define('MyApp.view.hr.user.form.UserForm',{
         'Ext.layout.container.Column',
         'Ext.layout.container.HBox',
         'Ext.toolbar.Fill',
-        'MyApp.view.hr.user.form.UserFormController'
+        'MyApp.view.hr.user.form.UserFormController',
+        'MyApp.view.widget.CodeCombo'
     ],
 
     controller: 'user-form',
@@ -70,25 +71,13 @@ Ext.define('MyApp.view.hr.user.form.UserForm',{
         xtype: 'textfield',
         fieldLabel : '이메일'
     },{
-        xtype: 'combobox',
-        store : Ext.create('Ext.data.Store',{
-            data : [{
-                code : 'code', codeName :'부서코드'
-            }]
-        }),
-        displayField: 'codeName',
-        valueField : 'code',
-        fieldLabel : '부서'
+        xtype: 'code-combo',
+        fieldLabel : '부서',
+        codeGroup : 'DEPT_CODE'
     },{
-        xtype: 'combobox',
-        store : Ext.create('Ext.data.Store',{
-            data : [{
-                code : 'code', codeName :'직급코드'
-            }]
-        }),
-        displayField: 'codeName',
-        valueField : 'code',
-        fieldLabel : '직급'
+        xtype: 'code-combo',
+        fieldLabel : '직급',
+        codeGroup : 'RANK_CODE'
     },{
         xtype: 'textfield',
         fieldLabel : '사번'

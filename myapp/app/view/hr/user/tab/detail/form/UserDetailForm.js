@@ -10,7 +10,8 @@ Ext.define('MyApp.view.hr.user.tab.detail.form.UserDetailForm',{
         'Ext.layout.container.Column',
         'Ext.layout.container.HBox',
         'Ext.layout.container.VBox',
-        'MyApp.view.hr.user.tab.detail.form.UserDetailFormController'
+        'MyApp.view.hr.user.tab.detail.form.UserDetailFormController',
+        'MyApp.view.widget.CodeCombo'
     ],
 
     controller: 'user-detail-form',
@@ -29,8 +30,9 @@ Ext.define('MyApp.view.hr.user.tab.detail.form.UserDetailForm',{
             margin : '0 20 0 0'
         },
         items : [{
-            xtype : 'textfield',
-            fieldLabel : '은행'
+            xtype: 'code-combo',
+            fieldLabel : '은행',
+            codeGroup : 'BANK_CODE'
         },{
             xtype : 'textfield',
             fieldLabel : '계좌번호'
