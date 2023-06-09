@@ -3,14 +3,23 @@ Ext.define('MyApp.view.global.GlobalMain',{
     extend: 'Ext.container.Viewport',
     alias : 'widget.global-main',
     requires: [
-        'Ext.layout.container.Fit',
+        'Ext.layout.container.Border',
         'MyApp.view.global.GlobalMainController',
-        'MyApp.view.hr.user.UserManagement'
+        'MyApp.view.global.center.GlobalCenter',
+        'MyApp.view.global.west.GlobalWest',
     ],
 
     controller: 'global-main',
-    layout : 'fit',
+    layout : 'border',
     items : [{
-        xtype : 'user-management'
+        xtype : 'global-west',
+        region : 'west',
+        width : 200,
+        frame : true,
+        margin : '0 5 0 0',
+    },{
+        xtype : 'global-center',
+        region : 'center',
+        flex : 1
     }]
 });
