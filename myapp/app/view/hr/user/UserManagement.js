@@ -24,8 +24,7 @@ Ext.define('MyApp.view.hr.user.UserManagement',{
         xtype : 'user-form',
         title : '사용자 정보',
         margin : '0 0 10 0',
-        frame : true,
-        flex : 1
+        frame : true
     },{
         xtype : 'user-tab',
         frame : true,
