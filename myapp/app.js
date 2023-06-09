@@ -3,20 +3,24 @@
  * and launch() the Application class.
  */
 Ext.application({
-    extend: 'MyApp.Application',
-
+    extend: 'Ext.app.Application',
     name: 'MyApp',
+
+    quickTips: false,
+    platformConfig: {
+        desktop: {
+            quickTips: true
+        }
+    },
 
     requires: [
         // This will automatically load all classes in the MyApp namespace
         // so that application classes do not need to require each other.
         'MyApp.*'
     ],
-
-    // The name of the initial view to create.
-    mainView: 'MyApp.view.main.Main',
     launch : function(){
-        alert('launch');
+
+        Ext.widget('global-main');
 
     }
 });
