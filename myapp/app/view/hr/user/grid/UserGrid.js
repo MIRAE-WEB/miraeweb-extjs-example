@@ -3,10 +3,27 @@ Ext.define('MyApp.view.hr.user.grid.UserGrid',{
     extend: 'Ext.grid.Panel',
     alias : 'widget.user-grid',
     requires: [
+        'Ext.button.Button',
+        'Ext.form.field.Text',
+        'Ext.toolbar.Fill',
         'MyApp.view.hr.user.grid.UserGridController'
     ],
     controller: 'user-grid',
     bind : '{userStore}',
+
+    tbar :[{
+        xtype : 'textfield',
+        fieldLabel: '검색조건'
+    },{
+        xtype : 'button',
+        text :'조회',
+        handler : 'onBtnSearch'
+    },{xtype : 'tbfill'},
+    {
+       xtype : 'button',
+       text : '삭제',
+        handler : 'onBtnDelete'
+    }],
     columns : [
         {text : '아이디', dataIndex :'userId'},
         {text : '성명', dataIndex :'userName'},

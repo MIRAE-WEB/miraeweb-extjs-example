@@ -30,18 +30,24 @@ Ext.define('MyApp.view.hr.user.form.UserForm',{
         xtype : 'tbfill',
     },{
         xtype : 'button',
-        text : '신규'
+        text : '신규',
+        handler : 'onBtnNew'
     },{
         xtype : 'button',
-        text : '저장'
+        text : '저장',
+        handler : 'onBtnSave'
     }],
     items : [{
         xtype: 'textfield',
         name : 'userId',
+        allowBlank : false,
+        blankText : '아이디를 입력해주세요',
         fieldLabel: '아이디',
     },{
         xtype: 'textfield',
         name : 'userName',
+        allowBlank : false,
+        blankText : '성명을 입력해주세요',
         fieldLabel : '성명'
     },{
         xtype: 'fieldcontainer',
@@ -65,7 +71,7 @@ Ext.define('MyApp.view.hr.user.form.UserForm',{
         name : 'birthDate',
         format : 'Y-m-d',
         altFormats: 'Y-m-d|Y.m.d|Ymd',
-        submitValue: 'Ymd',
+        submitFormat: 'Ymd',
         fieldLabel : '생년월일'
     },{
         xtype: 'textfield',
@@ -75,6 +81,8 @@ Ext.define('MyApp.view.hr.user.form.UserForm',{
         xtype: 'textfield',
         fieldLabel : '이메일',
         name : 'email',
+        vtype : 'email',
+        vtypeText : '이메일이 잘못되었습니다.'
     },{
         xtype: 'code-combo',
         fieldLabel : '부서',
