@@ -18,6 +18,9 @@ Ext.define('MyApp.view.hr.user.UserManagement',{
     ],
     controller: 'user-management',
     viewModel: {
+        data : {
+            userIdx : null
+        },
         stores : {
             userStore : {
                 type : 'store',
@@ -58,5 +61,9 @@ Ext.define('MyApp.view.hr.user.UserManagement',{
         xtype : 'user-tab',
         frame : true,
         flex : 1
-    }]
+    }],
+    listeners : {
+        'reset-mode' : 'onResetMode',
+        'update-mode' : 'onUpdateMode'
+    }
 });

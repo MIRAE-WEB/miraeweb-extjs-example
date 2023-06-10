@@ -12,5 +12,9 @@ Ext.define('MyApp.view.hr.user.tab.detail.UserDetailTab',{
     layout : 'fit',
     items : [{
         xtype : 'user-detail-form'
-    }]
+    }],
+    listeners : {
+        'reset-mode' : 'onResetMode',
+        'update-mode' :'onUpdateMode'
+    }
 });

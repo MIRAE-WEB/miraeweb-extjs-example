@@ -4,20 +4,7 @@ Ext.define('MyApp.view.hr.user.grid.UserGridController', {
     onBtnSearch: function (button) {
 
         var globalContent = this.getView().up('global-content');
-        var userGrid = globalContent.down('user-grid');
-
-
-        var userForm = globalContent.down('user-form');
-        var userDetailForm = globalContent.down('user-detail-form');
-        var userCareerGrid = globalContent.down('user-career-grid');
-        var userEducationGrid = globalContent.down('user-education-grid');
-
-        userGrid.getSelectionModel().deselectAll();
-        userForm.getForm().reset();
-        userDetailForm.getForm().reset();
-        userCareerGrid.getStore().removeAll();
-        userEducationGrid.getStore().removeAll();
-
+        globalContent.fireEvent('reset-mode');
 
         this.getView().getStore().load();
     },
@@ -51,38 +38,8 @@ Ext.define('MyApp.view.hr.user.grid.UserGridController', {
         var userIdx = record.get('userIdx');
         var globalContent = this.getView().up('global-content');
 
-        var userForm = globalContent.down('user-form');
-        userForm.getForm().loadRecord(record);
-
-        var userDetailForm = globalContent.down('user-detail-form');
-        userDetailForm.getForm().loadRecord(record);
-
-
-        var userCareerStore = globalContent.down('user-career-grid').getStore();
-
-        Ext.Ajax.request({
-            url : 'resources/data/users/'+userIdx+'/careers.json',
-            method : 'GET',
-            success : function(response){
-                var resObj = Ext.decode(response.responseText);
-                userCareerStore.loadRawData(resObj.careers);
-            }
-        })
-
-        var userEducationStore = globalContent.down('user-career-grid').getStore();
-
-        Ext.Ajax.request({
-            url : 'resources/data/users/'+userIdx+'/educations.json',
-            method : 'GET',
-            success : function(response){
-                var resObj = Ext.decode(response.responseText);
-                userEducationStore.loadRawData(resObj.educations);
-            }
-        })
-
-
-
-        var userEducationStore = globalContent.down('user-education-grid').getStore();
+        globalContent.lookupViewModel().set('userIdx',userIdx);
+        globalContent.fireEvent('update-mode');
 
     }
 });

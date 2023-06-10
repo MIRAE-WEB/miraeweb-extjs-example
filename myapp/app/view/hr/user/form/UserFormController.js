@@ -7,34 +7,20 @@ Ext.define('MyApp.view.hr.user.form.UserFormController', {
 
         var globalContent = this.getView().up('global-content');
         var userGrid = globalContent.down('user-grid');
-
-
-        var userForm = globalContent.down('user-form');
-        var userDetailForm = globalContent.down('user-detail-form');
-        var userCareerGrid = globalContent.down('user-career-grid');
-        var userEducationGrid = globalContent.down('user-education-grid');
-
         userGrid.getSelectionModel().deselectAll();
-        userForm.getForm().reset();
-        userDetailForm.getForm().reset();
-        userCareerGrid.getStore().removeAll();
-        userEducationGrid.getStore().removeAll();
+
+        globalContent.fireEvent('reset-mode');
 
     },
 
     onBtnSave: function (button) {
 
+
+        var userIdx = this.getView().lookupViewModel().get('userIdx');
+
+
+
         var globalContent = this.getView().up('global-content');
-
-        var userGrid = globalContent.down('user-grid');
-        var record = userGrid.getSelection()[0];
-        var userIdx = null;
-
-        if(record){
-            userIdx = record.get('userIdx');
-        }
-
-
         var userForm = globalContent.down('user-form');
         var userDetailForm = globalContent.down('user-detail-form');
 
