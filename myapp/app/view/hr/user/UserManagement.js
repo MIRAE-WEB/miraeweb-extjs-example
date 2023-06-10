@@ -3,6 +3,7 @@ Ext.define('MyApp.view.hr.user.UserManagement',{
     extend: 'MyApp.view.global.content.GlobalContent',
     alias : 'widget.user-management',
     requires: [
+        'Ext.data.Store',
         'Ext.data.proxy.Ajax',
         'Ext.data.reader.Json',
         'Ext.layout.container.VBox',
@@ -29,7 +30,13 @@ Ext.define('MyApp.view.hr.user.UserManagement',{
                         rootProperty: 'users',
                     }
                 }
-            }
+            },
+            userCareerStore :{
+                type : 'store'
+            },
+            userEducationStore :{
+                type : 'store'
+            },
         }
     },
     layout: {

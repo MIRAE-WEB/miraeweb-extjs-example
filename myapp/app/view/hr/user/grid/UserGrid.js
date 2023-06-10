@@ -5,7 +5,6 @@ Ext.define('MyApp.view.hr.user.grid.UserGrid',{
     requires: [
         'MyApp.view.hr.user.grid.UserGridController'
     ],
-
     controller: 'user-grid',
     bind : '{userStore}',
     columns : [
@@ -25,5 +24,8 @@ Ext.define('MyApp.view.hr.user.grid.UserGrid',{
             return '여성';
             }},
         {text : '이메일', dataIndex :'email'},
-    ]
+    ],
+    listeners : {
+        select : 'onSelect'
+    }
 });

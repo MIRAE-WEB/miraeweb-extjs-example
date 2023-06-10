@@ -37,9 +37,11 @@ Ext.define('MyApp.view.hr.user.form.UserForm',{
     }],
     items : [{
         xtype: 'textfield',
+        name : 'userId',
         fieldLabel: '아이디',
     },{
         xtype: 'textfield',
+        name : 'userName',
         fieldLabel : '성명'
     },{
         xtype: 'fieldcontainer',
@@ -49,37 +51,43 @@ Ext.define('MyApp.view.hr.user.form.UserForm',{
             xtype : 'radio',
             boxLabel : '남',
             flex :1,
-            name :'GENDER_CODE',
+            name :'genderCode',
             inputValue : 'MALE'
         },{
             xtype : 'radio',
             boxLabel : '여',
             flex :1,
-            name :'GENDER_CODE',
+            name :'genderCode',
             inputValue : 'FEMALE'
         }]
     },{
         xtype: 'datefield',
+        name : 'birthDate',
         format : 'Y-m-d',
         altFormats: 'Y-m-d|Y.m.d|Ymd',
         submitValue: 'Ymd',
         fieldLabel : '생년월일'
     },{
         xtype: 'textfield',
-        fieldLabel : '핸드폰'
+        fieldLabel : '핸드폰',
+        name : 'mobile',
     },{
         xtype: 'textfield',
-        fieldLabel : '이메일'
+        fieldLabel : '이메일',
+        name : 'email',
     },{
         xtype: 'code-combo',
         fieldLabel : '부서',
+        name : 'deptCode',
         codeGroup : 'DEPT_CODE'
     },{
         xtype: 'code-combo',
         fieldLabel : '직급',
+        name : 'rankCode',
         codeGroup : 'RANK_CODE'
     },{
         xtype: 'textfield',
-        fieldLabel : '사번'
+        fieldLabel : '사번',
+        name : 'employeeNumber'
     }]
 });

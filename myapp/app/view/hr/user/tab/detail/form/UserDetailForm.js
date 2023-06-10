@@ -1,6 +1,6 @@
 
 Ext.define('MyApp.view.hr.user.tab.detail.form.UserDetailForm',{
-    extend: 'Ext.panel.Panel',
+    extend: 'Ext.form.Panel',
     alias : 'widget.user-detail-form',
     requires: [
         'Ext.button.Button',
@@ -32,13 +32,16 @@ Ext.define('MyApp.view.hr.user.tab.detail.form.UserDetailForm',{
         items : [{
             xtype: 'code-combo',
             fieldLabel : '은행',
+            name : 'bankCode',
             codeGroup : 'BANK_CODE'
         },{
             xtype : 'textfield',
-            fieldLabel : '계좌번호'
+            fieldLabel : '계좌번호',
+            name : 'bankAccount'
         },{
             xtype : 'textfield',
             fieldLabel : '예금주',
+            name : 'ownerName',
             margin : '0 0 0 0'
         }]
     },{
@@ -59,6 +62,7 @@ Ext.define('MyApp.view.hr.user.tab.detail.form.UserDetailForm',{
                 },
                 items : [ {
                     xtype : 'textfield',
+                    name : 'zipCode',
                     margin : '0 5 0 0',
                     flex : 1
                 },{
@@ -70,9 +74,11 @@ Ext.define('MyApp.view.hr.user.tab.detail.form.UserDetailForm',{
            {
             xtype : 'textfield',
             fieldLabel : '주소',
+            name : 'address1',
             margin : '0 5 0 0'
         },{
             xtype : 'textfield',
+            name : 'address2',
         }]
 
     }]
