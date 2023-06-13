@@ -14,7 +14,7 @@ Ext.define('MyApp.view.hr.user.form.UserForm',{
         'Ext.layout.container.HBox',
         'Ext.toolbar.Fill',
         'MyApp.view.hr.user.form.UserFormController',
-        'MyApp.view.widget.CodeCombo'
+
     ],
 
     controller: 'user-form',

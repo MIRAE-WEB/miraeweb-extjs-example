@@ -10,8 +10,8 @@ Ext.define('MyApp.view.hr.user.tab.detail.form.UserDetailForm',{
         'Ext.layout.container.Column',
         'Ext.layout.container.HBox',
         'Ext.layout.container.VBox',
-        'MyApp.view.hr.user.tab.detail.form.UserDetailFormController',
-        'MyApp.view.widget.CodeCombo'
+        'Miraeweb.form.field.CodeCombo',
+        'MyApp.view.hr.user.tab.detail.form.UserDetailFormController'
     ],
 
     controller: 'user-detail-form',
